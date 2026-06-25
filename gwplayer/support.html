@@ -3,85 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>联系我们 - GWPlayer</title>
+    <title>Contact Us - GWPlayer</title>
     <style>
-        :root {
-            color-scheme: light dark;
-        }
+        :root { color-scheme: light dark; }
         body {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 40px 24px;
+            max-width: 720px; margin: 0 auto; padding: 40px 24px;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.75;
-            color: #1d1d1f;
-            background: #f5f5f7;
+            line-height: 1.75; color: #1d1d1f; background: #f5f5f7;
         }
         @media (prefers-color-scheme: dark) {
-            body {
-                color: #f5f5f7;
-                background: #1c1c1e;
-            }
+            body { color: #f5f5f7; background: #1c1c1e; }
         }
         h1 { font-size: 28px; margin-bottom: 8px; }
         h2 { font-size: 20px; margin-top: 32px; color: #555; }
-        @media (prefers-color-scheme: dark) {
-            h2 { color: #aaa; }
-        }
+        @media (prefers-color-scheme: dark) { h2 { color: #aaa; } }
         .card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 20px;
-            margin: 16px 0;
+            background: #fff; border-radius: 12px; padding: 20px; margin: 16px 0;
             box-shadow: 0 1px 3px rgba(0,0,0,0.08);
         }
         @media (prefers-color-scheme: dark) {
-            .card {
-                background: #2c2c2e;
-                box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-            }
+            .card { background: #2c2c2e; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }
         }
         .card h3 { margin: 0 0 8px 0; font-size: 16px; }
         .card p, .card a { margin: 0; font-size: 15px; word-break: break-all; }
         a { color: #007aff; text-decoration: none; }
         a:hover { text-decoration: underline; }
+        .lang-zh, .lang-en { display: none; }
+        .lang-zh.active, .lang-en.active { display: block; }
+        .lang-switch {
+            text-align: right; margin-bottom: 16px; font-size: 14px;
+        }
+        .lang-switch button {
+            background: none; border: 1px solid #ccc; border-radius: 6px;
+            padding: 4px 12px; cursor: pointer; font-size: 13px; color: inherit;
+            margin-left: 6px;
+        }
     </style>
 </head>
 <body>
-    <h1>联系我们</h1>
-    <p>感谢您使用 GWPlayer！如有任何问题、建议或反馈，欢迎通过以下方式联系我们。</p>
-
-    <div class="card">
-        <h3>🐛 问题反馈</h3>
-        <p>遇到 Bug 或功能建议？请在 GitHub 提交 Issue：<br>
-        <a href="https://github.com/gw601422958-netizen/gw-app-privacy/issues">gw-app-privacy Issues</a></p>
+    <div class="lang-switch">
+        <button onclick="switchLang('zh')">中文</button>
+        <button onclick="switchLang('en')">English</button>
     </div>
 
-    <div class="card">
-        <h3>📧 邮件联系</h3>
-        <p><a href="mailto:gw601422958@163.com">gw601422958@163.com</a></p>
+    <!-- 中文 -->
+    <div class="lang-zh">
+        <h1>联系我们</h1>
+        <p>感谢您使用 GWPlayer！如有任何问题、建议或反馈，欢迎通过以下方式联系我们。</p>
+        <div class="card">
+            <h3>🐛 问题反馈</h3>
+            <p>遇到 Bug 或功能建议？请在 GitHub 提交 Issue：<br>
+            <a href="https://github.com/gw601422958-netizen/gw-app-privacy/issues">gw-app-privacy Issues</a></p>
+        </div>
+        <div class="card">
+            <h3>�� 邮件联系</h3>
+            <p><a href="mailto:gw601422958@163.com">gw601422958@163.com</a></p>
+        </div>
+        <h2>常见问题（FAQ）</h2>
+        <div class="card">
+            <h3>Q: 如何导入音乐文件？</h3>
+            <p>A: 在「媒体库」页面点击右上角导入按钮，选择音频文件或文件夹即可。支持 MP3、M4A、AAC、FLAC、WAV 等常见格式。</p>
+        </div>
+        <div class="card">
+            <h3>Q: 如何添加歌词？</h3>
+            <p>A: 在播放页面点击右上角的歌词导入按钮，选择本地 .lrc 歌词文件。支持带时间戳的同步歌词滚动显示。</p>
+        </div>
+        <div class="card">
+            <h3>Q: 支持后台播放吗？</h3>
+            <p>A: 支持。即使切换到其他应用或锁屏，音乐仍会继续播放，并可在控制中心操作。</p>
+        </div>
+        <div class="card">
+            <h3>Q: 我的数据安全吗？</h3>
+            <p>A: 所有音乐文件和播放数据均存储在您的设备本地，不会上传至任何服务器。详见<a href="privacy.html">隐私政策</a>。</p>
+        </div>
     </div>
 
-    <h2>常见问题（FAQ）</h2>
-
-    <div class="card">
-        <h3>Q: 如何导入音乐文件？</h3>
-        <p>A: 在「媒体库」页面点击右上角导入按钮，选择音频文件或文件夹即可。支持 MP3、M4A、AAC、FLAC、WAV 等常见格式。</p>
+    <!-- English -->
+    <div class="lang-en">
+        <h1>Contact Us</h1>
+        <p>Thank you for using GWPlayer! If you have any questions, suggestions, or feedback, please reach out via the channels below.</p>
+        <div class="card">
+            <h3>🐛 Bug Reports</h3>
+            <p>Found a bug or have a feature request? Submit an issue on GitHub:<br>
+            <a href="https://github.com/gw601422958-netizen/gw-app-privacy/issues">gw-app-privacy Issues</a></p>
+        </div>
+        <div class="card">
+            <h3>📧 Email</h3>
+            <p><a href="mailto:gw601422958@163.com">gw601422958@163.com</a></p>
+        </div>
+        <h2>FAQ</h2>
+        <div class="card">
+            <h3>Q: How do I import music?</h3>
+            <p>A: Tap the import button in the top-right corner of the Library page, then select audio files or folders. Supports MP3, M4A, AAC, FLAC, WAV, and more.</p>
+        </div>
+        <div class="card">
+            <h3>Q: How do I add lyrics?</h3>
+            <p>A: Tap the lyrics import button in the top-right corner of the Player page, and select a local .lrc lyrics file. Synced lyrics with timestamps are supported.</p>
+        </div>
+        <div class="card">
+            <h3>Q: Does it support background playback?</h3>
+            <p>A: Yes. Music continues playing even when switching apps or locking the screen, and can be controlled from Control Center.</p>
+        </div>
+        <div class="card">
+            <h3>Q: Is my data safe?</h3>
+            <p>A: All music files and playback data are stored locally on your device and are never uploaded to any server. See <a href="privacy.html">Privacy Policy</a>.</p>
+        </div>
     </div>
 
-    <div class="card">
-        <h3>Q: 如何添加歌词？</h3>
-        <p>A: 在播放页面点击右上角的歌词导入按钮，选择本地 .lrc 歌词文件。支持带时间戳的同步歌词滚动显示。</p>
-    </div>
-
-    <div class="card">
-        <h3>Q: 支持后台播放吗？</h3>
-        <p>A: 支持。即使切换到其他应用或锁屏，音乐仍会继续播放，并可在控制中心操作。</p>
-    </div>
-
-    <div class="card">
-        <h3>Q: 我的数据安全吗？</h3>
-        <p>A: 所有音乐文件和播放数据均存储在您的设备本地，不会上传至任何服务器。详见<a href="privacy.html">隐私政策</a>。</p>
-    </div>
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-zh, .lang-en').forEach(el => el.classList.remove('active'));
+            document.querySelector('.lang-' + lang).classList.add('active');
+            try { localStorage.setItem('gwplayer-lang', lang); } catch(e) {}
+        }
+        (function() {
+            var stored = null;
+            try { stored = localStorage.getItem('gwplayer-lang'); } catch(e) {}
+            var browserLang = (navigator.language || '').toLowerCase();
+            var detected = stored || (browserLang.startsWith('zh') ? 'zh' : 'en');
+            switchLang(detected);
+        })();
+    </script>
 </body>
 </html>
